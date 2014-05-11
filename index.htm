@@ -37,16 +37,14 @@
         <h3 class="text-muted">Proof of Concept</h3>
       </div>
 
-      <div class="jumbotron">
+      <div class="jumbotron panel-collapse collapse in" id="splash">
         <h1>Editable graph in arbor.js</h1>
         <p class="lead">The goal is to check if the </p>
-        <p><a class="btn btn-lg btn-success" href="#" role="button">Launch</a></p>
+        <p><a class="btn btn-lg btn-success" id="launch" href="#" role="button">Launch</a></p>
       </div>
 
-      <div class="row canvas">
-        <div class="col-lg-6">
-          <p><small>The canvas will go here.</small></p>
-        </div>
+      <div class="collapse" id="playground">
+          <canvas class="center-block" id="graph" width="600" height="600">Won't do without canvas. SRY.</canvas>
       </div>
 
       <div class="footer">
@@ -59,5 +57,16 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
+		<script src="js/jquery-2.1.1.js"></script>
+		<script src="js/bootstrap.js"></script>
+		
+		<script>
+			$(document).ready(function(){
+				$('#launch').click(function(){
+					$('#splash').collapse('hide');
+					$('#playground').collapse('show');
+				});
+			});
+		</script>
   </body>
 </html>
