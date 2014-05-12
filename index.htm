@@ -195,23 +195,46 @@
             };
             
             window.Graph = function() {
+                // source: http://www.ahia.ca/bins/content_page.asp?cid=9681
                 return {
                     nodes: {},
                     edges: {
-                        a: {
-                            b: {},
-                            c: {},
-                            d: {},
-                            e: {},
-                            f: {}
+                        ICT: {
+                            IT: {},
+                            Electronics: {},
+                            Telecom: {},
+                            Geomatics: {},
+                            Media: {}
                         },
-                        b: {
-                            c: {},
-                            d: {}
+                        IT: {
+                            Software: {},
+                            Services: {},
+                            Hardware: {},
+                            Training: {}
                         },
-                        c: {
-                            d: {}
+                        Electronics: {
+                            Design: {},
+                            Manufacturing: {},
+                            Support: {}
                         },
+                        Telecom: {
+                            Equipment: {},
+                            Operation: {},
+                            Services: {}
+                        },
+                        Geomatics: {
+                            Sensing: {},
+                            Surveying: {},
+                            Mapping: {},
+                            Tracking: {},
+                            Equipment: {}
+                        },
+                        Media: {
+                            Streaming: {},
+                            Education: {},
+                            Connectivity: {},
+                            Support: {}
+                        }
                     }
                 };
             };
