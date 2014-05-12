@@ -39,7 +39,7 @@
 
       <div class="jumbotron panel-collapse collapse in" id="splash">
         <h1>Editable graph in arbor.js</h1>
-        <p class="lead">The goal is to check if the <a href="">arbor.js</a> library will allow for easy development of an editable dense graph presentation. This is a <strong>prototype</strong> of how could it be done.</p>
+        <p class="lead">The goal is to check if the <a href="http://arborjs.org/">arbor.js</a> library will allow for easy development of an editable dense graph presentation. This is a <strong>prototype</strong> of how could it be done.</p>
         <p><a class="btn btn-lg btn-success" id="launch" href="#" role="button">Go to the graph</a></p>
       </div>
 
@@ -59,14 +59,36 @@
     <!-- Placed at the end of the document so the pages load faster -->
 		<script src="js/jquery-2.1.1.js"></script>
 		<script src="js/bootstrap.js"></script>
+		<script src="js/arbor.js"></script>
 		
 		<script>
+			// event handlers
 			$(document).ready(function(){
 				$('#launch').click(function(){
 					$('#splash').collapse('hide');
 					$('#playground').collapse('show');
+					window.startGraph();
 				});
 			});
+		</script>
+		
+		<script>
+			// arbor
+			window.startGraph = function() {
+				function init() {
+					console.log('renderer init');
+				}
+				
+				function redraw() {
+					console.log('renderer redraw');
+				}
+				
+				var ps = arbor.ParticleSystem();
+				ps.renderer = {
+					init: init,
+					redraw: redraw
+				};
+			}
 		</script>
   </body>
 </html>
